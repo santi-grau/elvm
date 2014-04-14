@@ -1,4 +1,3 @@
-
 $(window).bind({
 	'load' : init,
 	'resize' : resizing
@@ -7,6 +6,7 @@ $(window).bind({
 function init(){
 	fittobox(); // fittobox
 	mainfadein(); // fadein content
+	isotopeload();
 }
 
 function resizing(){
@@ -24,24 +24,29 @@ function mainfadein(){
 }
 
 function topbartoggle(){
+	$('#top-bar').toggleClass('active');
 	$('.top-bar-box').slideToggle();
-	$('.top-bar-close').fadeToggle();
+	$('.top-bar-close').fadeToggle();	
+	if(topbarID != false) {
+		clearInterval(topbarID);
+		topbarID = false;
+	}
 }
 
 function lightbox(){
 	$('.lightbox').fadeToggle();
 	$('body').toggleClass('lightbox-active')
-	fittobox(); // fittobox
+	fittobox();
 }
 
 /* Isotope for calendar */
-$(window).load(function(){
+function isotopeload(){
 	var $container = $('.c2');
 	$container.isotope({
 		itemSelector: '.calendar-article',
 		masonry: {
-		  columnWidth: 252,
-		  gutter: 24
+			columnWidth: 252,
+			gutter: 24
 		}
 	});
-});
+};
