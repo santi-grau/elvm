@@ -288,7 +288,7 @@ header #widget-box a:hover {
   margin-left: 0;
   padding-top: 13px;
   background: #e6e6e6;
-  z-index: 10px;
+  z-index: 10;
 }
 #slider ul li .top-bar-box img {
   display: block;
