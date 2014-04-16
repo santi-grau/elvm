@@ -306,6 +306,7 @@ header #widget-box a:hover {
   background: #e6e6e6;
   z-index: 10;
   position: relative;
+  min-width: 900px;
 }
 #slider ul li .top-bar-box img {
   display: block;
