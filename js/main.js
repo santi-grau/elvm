@@ -23,15 +23,12 @@ function mainfadein(){
 	$('#main').fadeIn();
 }
 
-function topbartoggle(){
-	$('#top-bar').toggleClass('active');
-	$('.top-bar-box').slideToggle();
-	$('.top-bar-close').fadeToggle();	
-	if(topbarID != false) {
-		clearInterval(topbarID);
-		topbarID = false;
-	}
+function topbarclose(){
+	$('.top-bar-close').toggleClass('active');	
+	$('.top-bar-box').slideUp();
+	$('#slider').toggleClass('active');
 }
+
 
 function lightbox(){
 	$('.lightbox').fadeToggle();

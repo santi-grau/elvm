@@ -1,33 +1,28 @@
 <div id="slider">
-	<ul>
-		<li>
-			<h2><a href="javascript:void(0)" onclick="clearInterval(topbarID);topbartoggle(this);">Espace Paris: Astralis</a></h2>
+	<ul class="container">
+		<li class="slides">
+			<h2><a href="javascript:void(0)" onclick="topbartoggle();">Espace Paris: ScÈnes Roumaines</a></h2>
+			<div class="top-bar-box clearfix">
+				<img src="img/top-bar-img2.jpg" alt="top-bar-img2" width="387" height="218" />
+				<a href="javascript:void(0)"><p>Since time immemorial, artists have experimented with visionary experience by diving into the Astral depths. Nevertheless,
+				this distinctive act of creation is rarely tackled. Astralis, the 23rd exhibition at Espace culturel
+				Louis Vuitton, takes visitors on a journey into this strange reality by exploring unfathomable
+				and inaccessible worlds. They are the great purveyors of visions.</p></a>
+			</div>
+		</li>
+		<li class="slides">
+			<h2><a href="javascript:void(0)" onclick="topbartoggle();">Espace Paris: Astralis</a></h2>
 			<div class="top-bar-box clearfix">
 				<img src="../img/top-bar-img.jpg" alt="top-bar-img" width="893" height="218" />
 			</div>
 		</li>
-		<li>
-			<h2><a href="javascript:void(0)" onclick="clearInterval(topbarID);topbartoggle(this);">Espace Paris: ScÈnes Roumaines</a></h2>
-			<div class="top-bar-box clearfix">
-				<img src="img/top-bar-img2.jpg" alt="top-bar-img2" width="387" height="218" />
-				<a href="javascript:void(0)"><p>Since time immemorial, artists have experimented with visionary experience by diving into the Astral depths. Nevertheless,
-				this distinctive act of creation is rarely tackled. Astralis, the 23rd exhibition at Espace culturel
-				Louis Vuitton, takes visitors on a journey into this strange reality by exploring unfathomable
-				and inaccessible worlds. They are the great purveyors of visions.</p></a>
-			</div>
-		</li>
-		<li>
-			<h2><a href="javascript:void(0)" onclick="clearInterval(topbarID);topbartoggle(this);">Espace Paris: ScÈnes Roumaines</a></h2>
-			<div class="top-bar-box clearfix">
-				<img src="img/top-bar-img2.jpg" alt="top-bar-img2" width="387" height="218" />
-				<a href="javascript:void(0)"><p>Since time immemorial, artists have experimented with visionary experience by diving into the Astral depths. Nevertheless,
-				this distinctive act of creation is rarely tackled. Astralis, the 23rd exhibition at Espace culturel
-				Louis Vuitton, takes visitors on a journey into this strange reality by exploring unfathomable
-				and inaccessible worlds. They are the great purveyors of visions.</p></a>
-			</div>
-		</li>
-	</ul>	
-	<a href="javascript:void(0)" onclick="clearInterval(topbarID);topbarclose();" class="top-bar-close"></a>
+	</ul>
+	<div class="buttons">
+		<a href="javascript:void(0)" class="btn-next"></a>
+		<a href="javascript:void(0)" class="btn-prev"></a>	
+	</div>
+	<a href="javascript:void(0)" class="control-close" onclick="topbartoggle();"></a>	
+	<a href="javascript:void(0)" class="top-bar-close" onclick="topbartoggle();"></a>
 </div>
 
 <nav>
@@ -66,57 +61,73 @@
 	<a href="javascript:void(0)">Newsletter sign-up</a>
 </div>
 
-<script type="text/javascript">
+<script>
+/* Top bar ticker slider */
+var scrolllft=0;
+var curSlide=1;
 
-/* SLIDER */
-var topbarID = false; 
-topbarID = setInterval(function () {
-	moveRight();
-}, 5000);
+var firstSlide=$('.slides').first().clone(),
+lastSlide=$('.slides').last().clone();
+$('.container').append(firstSlide);
+$('.container').prepend(lastSlide);
+var par=$('.container'),
+cld=$('.slides');
+par.scrollLeft(par.width());
 
-var slideCount = $('#slider ul li').length;
-var slideWidth = $('#slider ul li').width();
-var slideHeight = $('#slider ul li').height();
-var sliderUlWidth = slideCount * slideWidth;
-	
-$('#slider').css({ height: slideHeight });
-$('#slider ul').css({ width: sliderUlWidth, height: slideHeight });
-$('#slider ul li').css({ width: slideWidth });
-$('#slider ul li:last-child').prependTo('#slider ul');
+$('.buttons').on('click','a',function(){
+	if($(this).hasClass('btn-prev')){
+		if(!par.is(':animated')){
+			var pr=par.get(0);
+			curSlide>0?curSlide--:curSlide=cld.length-3;
+			if(curSlide==cld.length-3) par.scrollLeft(pr.scrollWidth-(pr.clientWidth*2));
+			par.stop().animate({scrollLeft: par.scrollLeft()-par.width()+"px"}, 750,function(){
+				scrolllft = par.scrollLeft()-par.width();
+			});
+		}
+	}
+	else{
+		if(!par.is(':animated')){
+			curSlide<(cld.length-1)?curSlide++:curSlide=2;
+			if(curSlide==2) par.scrollLeft(par.width());
+			par.stop().animate({scrollLeft: par.scrollLeft()+par.width()+"px"}, 750,function(){
+				scrolllft = par.scrollLeft()+par.width();
+			});
+		}
+	}	
+});
 
-function moveLeft() {
-	$('#slider ul').animate({
-		left: + slideWidth
-	}, 800, function () {
-		$('#slider ul li:last-child').prependTo('#slider ul');
-		$('#slider ul').css('left', '');
-	});
-};
+$(window).resize(function(){
+	par.scrollLeft(par.scrollLeft()+$('.'+cld.attr('class')+':nth-child('+(curSlide+1)+')').position().left-par.position().left);
+});
 
-function moveRight() {
-	$('#slider ul').animate({
-		left: - slideWidth
-	}, 800, function () {
-		$('#slider ul li:first-child').appendTo('#slider ul');
-		$('#slider ul').css('left', '');
-	});
-};
+var tickerID = false
+tickerID = setInterval(function(){
+		if(!par.is(':animated')){
+			curSlide<(cld.length-1)?curSlide++:curSlide=2;
+			if(curSlide==2) par.scrollLeft(par.width());
+		par.stop().animate({scrollLeft: par.scrollLeft()+par.width()+"px"}, 750,function(){
+			scrolllft = par.scrollLeft()+par.width();
+		});
+		}
+},5000);
 
-function topbartoggle(that){
-	$(that).parent().next('.top-bar-box').slideToggle();
-	$('.top-bar-close').toggleClass('active');	
-	if(topbarID != false) {
-		clearInterval(topbarID);
-		topbarID = false;
-	} else { topbarID = setInterval(moveRight, 5000) }
-}
-
-function topbarclose(){
-	$('.top-bar-close').toggleClass('active');	
-	$('.top-bar-box').slideUp();
-	if(topbarID != false) {
-		clearInterval(topbarID);
-		topbarID = false;
-	} else { topbarID = setInterval(moveRight, 5000) }
+function topbartoggle(){
+	$('#slider').toggleClass('active');
+	$('.top-bar-box').slideToggle();
+	$('.top-bar-close').toggleClass('active');
+	if(tickerID != false) {
+	    clearInterval(tickerID);
+	    tickerID = false;
+	} else { 
+		tickerID = setInterval(function(){
+				if(!par.is(':animated')){
+					curSlide<(cld.length-1)?curSlide++:curSlide=2;
+					if(curSlide==2) par.scrollLeft(par.width());
+				par.stop().animate({scrollLeft: par.scrollLeft()+par.width()+"px"}, 750,function(){
+					scrolllft = par.scrollLeft()+par.width();
+				});
+				}
+		},5000);
+	}
 }
 </script>
