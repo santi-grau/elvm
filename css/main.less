@@ -1,10 +1,8 @@
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+/*   
+Front-end development:
+Diego Esteban
+www.diegoesteban.eu
+*/
 
 /* ==========================================================================
 	Base styles: opinionated defaults
@@ -153,7 +151,7 @@ a{
 header{
 	nav {
 		width: 160px;
-		top: 65px;
+		top: 29px;
 		text-align: right;
 		position: fixed;
 		z-index: 1;
@@ -225,7 +223,7 @@ header{
 		width: 160px;
 		position: fixed;
 		right: 0;
-		top: 45px;
+		top: 9px;
 		text-align: left;
 		z-index: 1;
 		li{
@@ -277,144 +275,12 @@ header{
 	}
 }
 
-#slider {
-	position: fixed;
-	overflow: hidden;
-	width: 100%;
-	top:0;
-	z-index: 11;
-	height: 36px;
-	.transition-slow();
-	&.active{
-		height: 300px !important;
-	}
-	ul {
-		list-style: none;
-		overflow: hidden;
-		white-space: nowrap;
-		font-size: 0px;
-		width: 100%;
-		height: 100%;
-		margin: 0px;
-		padding: 0px;
-		li {
-			display: inline-block;
-			line-height: 36px;
-			background: @lightgray;
-			width:100%;
-			height: 100%;
-			margin:0px;
-			padding:0px;
-			h2{
-				margin: 0;
-				padding-left: 30px;
-				a{
-					font-size: 15px;
-					color: #000;
-					display: block;
-					text-decoration: none;
-					&:hover{
-						color: @mainred;
-					}
-				}
-			}
-			.top-bar-box{
-				display: none;
-				margin-top: 0;
-				padding-left: 30px;
-				z-index: 20;
-				width: 100%;
-				height: 261px;
-				left: 0;
-				margin-left: 0px;
-				background: @lightgray;
-				z-index: 10;
-				position: relative;
-				min-width: 900px;
-				img{
-					display: block;
-					float: left;
-					margin-right: 29px;
-					height: 218px;
-					width: auto;
-					margin-top: 14px;
-				}
-				a{
-					color: #000;
-					&:hover{
-						color: @mainred;
-					}
-				}
-				p{
-					width: 434px;
-					font-family: 'futuratbook';
-					display: block;
-					float: left;
-					font-size: 24px;
-					line-height: 24px;
-					margin: 0;
-					white-space: normal;
-					margin-top: 14px;
-				}
-			}
-		}
-	}
-	.top-bar-close{
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		z-index: 3;
-		display: none;
-		&.active{
-			display: block;
-		}
-	}
-	.buttons{
-		a{
-			position: absolute;
-			top: 135px;
-			width: 14px;
-			height: 28px;
-			z-index: 10;
-			transition: none;
-			&.btn-next{
-				right: 8px;
-				background: url(../img/sprites.png) 0px -185px;
-				&:hover{
-					background: url(../img/sprites.png) 0px -223px;
-				}
-			}
-			&.btn-prev{
-				left: 8px;
-				background: url(../img/sprites.png) 0px -260px;
-				&:hover{
-					background: url(../img/sprites.png) 0px -297px;
-				}
-			}
-		}
-	}
-	.control-close{
-		position: absolute;
-		top: 275px;
-		width: 27px;
-		height: 15px;
-		background: url(../img/sprites.png) 0px -335px;
-		z-index: 30;
-		left: 50%;
-		margin-left: -14px;
-		transition: none;
-		&:hover{
-			background: url(../img/sprites.png) 0px -360px;
-		}
-	}
-}
-
 /* CONTENT */
 #main{
 	width: 518px;
 	position: relative;
 	margin: 0 auto;
-	margin-top: 210px;
+	margin-top: 174px;
 	display: none;
 	.c1{
 		width: 711px;
@@ -450,6 +316,11 @@ header{
 					border: none;
 					margin-top: 0;
 					padding-bottom: 0;
+					a{
+						&:hover{
+							color: @mainred;
+						}
+					}
 				}
 				.article-header-info{
 					padding-bottom: 8px;
@@ -555,6 +426,31 @@ header{
 		blockquote{
 			margin-left: 46px;
 			margin-bottom: 18px;
+		}
+	}
+	ul.download-list{
+		li{
+			margin-bottom: 8px;
+			a{
+				font-size: 24px;
+				font-family: 'futuratbook';
+				.pdf-icon{
+					background: url(../img/pdf-icon.png);
+					margin-top: 0;
+					width: 12px;
+					height: 16px;
+					display: inline-block;
+				}
+			}
+			&:hover{
+				a{	
+					color: @mainred;
+					.pdf-icon{
+						background: url(../img/pdf-icon-hover.png);
+					}
+				}
+			}
+				
 		}
 	}
 }
