@@ -1,9 +1,8 @@
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+/*   
+Front-end development:
+Diego Esteban
+www.diegoesteban.eu
+*/
 /* ==========================================================================
 	Base styles: opinionated defaults
 	========================================================================== */
@@ -128,7 +127,7 @@ a {
 /* Header */
 header nav {
   width: 160px;
-  top: 65px;
+  top: 29px;
   text-align: right;
   position: fixed;
   z-index: 1;
@@ -197,7 +196,7 @@ header #languages {
   width: 160px;
   position: fixed;
   right: 0;
-  top: 45px;
+  top: 9px;
   text-align: left;
   z-index: 1;
 }
@@ -247,144 +246,12 @@ header #widget-box a {
 header #widget-box a:hover {
   color: #e00014;
 }
-#slider {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-  top: 0;
-  z-index: 11;
-  height: 36px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
-#slider.active {
-  height: 300px !important;
-}
-#slider ul {
-  list-style: none;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 0px;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-#slider ul li {
-  display: inline-block;
-  line-height: 36px;
-  background: #e6e6e6;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-#slider ul li h2 {
-  margin: 0;
-  padding-left: 30px;
-}
-#slider ul li h2 a {
-  font-size: 15px;
-  color: #000;
-  display: block;
-  text-decoration: none;
-}
-#slider ul li h2 a:hover {
-  color: #e00014;
-}
-#slider ul li .top-bar-box {
-  display: none;
-  margin-top: 0;
-  padding-left: 30px;
-  z-index: 20;
-  width: 100%;
-  height: 261px;
-  left: 0;
-  margin-left: 0px;
-  background: #e6e6e6;
-  z-index: 10;
-  position: relative;
-  min-width: 900px;
-}
-#slider ul li .top-bar-box img {
-  display: block;
-  float: left;
-  margin-right: 29px;
-  height: 218px;
-  width: auto;
-  margin-top: 14px;
-}
-#slider ul li .top-bar-box a {
-  color: #000;
-}
-#slider ul li .top-bar-box a:hover {
-  color: #e00014;
-}
-#slider ul li .top-bar-box p {
-  width: 434px;
-  font-family: 'futuratbook';
-  display: block;
-  float: left;
-  font-size: 24px;
-  line-height: 24px;
-  margin: 0;
-  white-space: normal;
-  margin-top: 14px;
-}
-#slider .top-bar-close {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  display: none;
-}
-#slider .top-bar-close.active {
-  display: block;
-}
-#slider .buttons a {
-  position: absolute;
-  top: 135px;
-  width: 14px;
-  height: 28px;
-  z-index: 10;
-  transition: none;
-}
-#slider .buttons a.btn-next {
-  right: 8px;
-  background: url(../img/sprites.png) 0px -185px;
-}
-#slider .buttons a.btn-next:hover {
-  background: url(../img/sprites.png) 0px -223px;
-}
-#slider .buttons a.btn-prev {
-  left: 8px;
-  background: url(../img/sprites.png) 0px -260px;
-}
-#slider .buttons a.btn-prev:hover {
-  background: url(../img/sprites.png) 0px -297px;
-}
-#slider .control-close {
-  position: absolute;
-  top: 275px;
-  width: 27px;
-  height: 15px;
-  background: url(../img/sprites.png) 0px -335px;
-  z-index: 30;
-  left: 50%;
-  margin-left: -14px;
-  transition: none;
-}
-#slider .control-close:hover {
-  background: url(../img/sprites.png) 0px -360px;
-}
 /* CONTENT */
 #main {
   width: 518px;
   position: relative;
   margin: 0 auto;
-  margin-top: 210px;
+  margin-top: 174px;
   display: none;
 }
 #main .c1 {
@@ -418,6 +285,9 @@ header #widget-box a:hover {
   border: none;
   margin-top: 0;
   padding-bottom: 0;
+}
+#main .c2 article .article-header h1 a:hover {
+  color: #e00014;
 }
 #main .c2 article .article-header .article-header-info {
   padding-bottom: 8px;
@@ -514,6 +384,26 @@ header #widget-box a:hover {
 #main article blockquote {
   margin-left: 46px;
   margin-bottom: 18px;
+}
+#main ul.download-list li {
+  margin-bottom: 8px;
+}
+#main ul.download-list li a {
+  font-size: 24px;
+  font-family: 'futuratbook';
+}
+#main ul.download-list li a .pdf-icon {
+  background: url(../img/pdf-icon.png);
+  margin-top: 0;
+  width: 12px;
+  height: 16px;
+  display: inline-block;
+}
+#main ul.download-list li:hover a {
+  color: #e00014;
+}
+#main ul.download-list li:hover a .pdf-icon {
+  background: url(../img/pdf-icon-hover.png);
 }
 .lightbox {
   position: fixed;
@@ -788,13 +678,11 @@ footer a:hover {
 }
 :-moz-placeholder {
   /* Firefox 18- */
-
   color: #000;
   font-family: 'futuratbook';
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
-
   color: #000;
   font-family: 'futuratbook';
 }
@@ -810,7 +698,6 @@ footer a:hover {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-
   *text-indent: -9999px;
 }
 .ir:before {
@@ -873,10 +760,8 @@ footer a:hover {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
@@ -908,7 +793,6 @@ footer a:hover {
     background: transparent !important;
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
-  
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -923,8 +807,8 @@ footer a:hover {
     content: " (" attr(title) ")";
   }
   /*
-  	 * Don't show links for images, or javascript/internal links
-  	 */
+	 * Don't show links for images, or javascript/internal links
+	 */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -938,7 +822,6 @@ footer a:hover {
   thead {
     display: table-header-group;
     /* h5bp.com/t */
-  
   }
   tr,
   img {
@@ -947,7 +830,7 @@ footer a:hover {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,
