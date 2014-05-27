@@ -92,6 +92,7 @@ textarea {
 }
 html {
   overflow-y: scroll;
+  height: 100%;
 }
 html,
 body {
@@ -196,6 +197,7 @@ header nav ul li .sub-menu li a {
   border-bottom: 1px solid #fff;
 }
 header nav ul li .sub-menu li a:hover {
+  border-bottom: 1px #FFF solid;
   color: #e00014;
 }
 header nav ul li .sub-menu li.current-menu-item a {
@@ -264,6 +266,21 @@ header #widget-box a {
 header #widget-box a:hover {
   color: #e00014;
 }
+.wp-caption {
+  width: 436px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 10px;
+}
+.wp-caption .wp-caption-text {
+  width: 436px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 18px;
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 10px;
+}
 /* CONTENT */
 #main {
   width: 518px;
@@ -295,13 +312,14 @@ header #widget-box a:hover {
 #main p a:hover {
   color: #e00014;
 }
-#main p span.img-caption {
+#main p.wp-caption-text {
   width: 436px;
   display: block;
   margin: 0 auto;
   margin-bottom: 18px;
   font-size: 12px;
   line-height: 15px;
+  margin-top: 10px;
 }
 #main p.article-hour {
   margin-top: -18px;
@@ -314,7 +332,8 @@ header #widget-box a:hover {
   border-bottom: 1px solid #e00014;
   color: #e00014;
 }
-#main blockquote {
+#main address {
+  font-style: normal;
   margin-left: 46px;
   margin-bottom: 18px;
 }
@@ -505,13 +524,46 @@ header #widget-box a:hover {
   cursor: default;
 }
 /* Home teaser */
-#teaser-title {
+body.home-teaser {
+  height: 100%;
+  overflow: hidden !important;
+}
+body.home-teaser #videoCont {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+body.home-teaser #video {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #CCC;
+  z-index: 10;
+  overflow: hidden;
+}
+body.home-teaser #video iframe {
+  position: absolute;
+}
+body.home-teaser #videoElements {
+  position: fixed;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+body.home-teaser #videoElements #teaser-title {
   left: 28px;
   bottom: 25px;
   text-decoration: none;
+  position: absolute;
 }
-#teaser-title h2 {
+body.home-teaser #videoElements #teaser-title h2 {
   font-size: 24px;
   line-height: 24px;
   color: #e00014;
@@ -520,7 +572,7 @@ header #widget-box a:hover {
   font-weight: normal;
   text-transform: uppercase;
 }
-#teaser-title p.home-date {
+body.home-teaser #videoElements #teaser-title p.home-date {
   font-family: 'futuratbook';
   font-size: 15px;
   line-height: 18px;
@@ -528,7 +580,7 @@ header #widget-box a:hover {
   margin-bottom: 0;
   color: #000;
 }
-h3.teaser-gallery {
+body.home-teaser #videoElements h3.teaser-gallery {
   margin: 0;
   font-family: 'futuratbook';
   position: absolute;
@@ -538,16 +590,12 @@ h3.teaser-gallery {
   font-size: 15px;
   line-height: 18px;
 }
-h3.teaser-gallery span {
+body.home-teaser #videoElements h3.teaser-gallery span {
   font-size: 12px;
 }
-h3.teaser-gallery a {
+body.home-teaser #videoElements h3.teaser-gallery a {
   text-decoration: none;
   color: #000;
-}
-/* Home teaser */
-body.home-teaser {
-  background: #000;
 }
 /* Calendar page */
 body.calendar #main {

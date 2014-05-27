@@ -17,7 +17,31 @@
 	</head>
 
 
-	<body>
+	<body class="home-teaser">
+		<?php if(get_field('show_web_teaser')){ ?>
+			<div id="videoCont">
+				<div id="video" url="<?php the_field('teaser_video'); ?>">
+					<iframe frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+				<div id="videoElements">
+					<a id="teaser-title" href="home.html">
+						<h2><?php the_field('teaser_content'); ?></h2>
+						<p class="home-date">
+							<?php
+								$date1 = DateTime::createFromFormat('Ymd',get_field('teaser_start_date'));
+								$date2 = DateTime::createFromFormat('Ymd',get_field('teaser_end_date')); 
+								if($date1->format('Y') == $date2->format('Y')){
+									echo $date1->format('F d').' - '.$date2->format('F d').', '.$date2->format('Y');
+								}else{
+									echo $date1->format('F d, Y').' - '.$date2->format('F d, Y');
+								}
+							?>
+						</p>
+					</a>
+					<h3 class="teaser-gallery"><a href="home.html">Espace Louis Vuitton München</a></h3>
+				</div>
+			</div>
+		<?php } ?>
 		<header>
 			<nav>
 				<a href="/" id="logo"></a>
@@ -41,12 +65,3 @@
 			</div>
 		</header>
 		<div id="main">
-
-
-
-
-
-
-
-
-

@@ -116,6 +116,7 @@ textarea {
 }
 html{
 	overflow-y: scroll;
+	height: 100%;
 }
 html, body { 
 	margin:0;
@@ -215,7 +216,7 @@ header{
 							margin-bottom: 0;
 							border-bottom: 1px solid #fff;
 							&:hover{
-								
+								border-bottom: 1px #FFF solid;
 								color: @mainred;
 							}
 						}
@@ -296,6 +297,22 @@ header{
 	}
 }
 
+
+.wp-caption{
+	width: 436px;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 10px;
+	.wp-caption-text{
+		width: 436px;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 18px;
+		font-size: 12px;
+		line-height: 15px;
+		margin-top: 10px;
+	}
+}
 /* CONTENT */
 #main{
 	width: 518px;
@@ -314,12 +331,6 @@ header{
 		padding-bottom: 8px;
 		margin: 20px 0 28px 0;
 	}
-	// p{
-	// 	font-size: 24px;
-	// 	line-height: 24px;
-	// 	margin-bottom: 18px;
-	// 	font-family: 'futuratbook';
-	// }
 	p{
 		font-family: 'futuratbook';
 		font-size: 15px;
@@ -331,21 +342,14 @@ header{
 				color: @mainred;
 			}
 		}
-		// img{
-		// 	width: 436px;
-		// 	margin: 0 auto;
-		// 	display: block;
-		// 	margin-bottom: 10px;
-		// }
-		span{
-			&.img-caption{
-				width: 436px;
-				display: block;
-				margin: 0 auto;
-				margin-bottom: 18px;
-				font-size: 12px;
-				line-height: 15px;
-			}
+		&.wp-caption-text{
+			width: 436px;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 18px;
+			font-size: 12px;
+			line-height: 15px;
+			margin-top: 10px;
 		}
 		&.article-hour{
 			margin-top: -18px;
@@ -361,7 +365,8 @@ header{
 			}
 		}
 	}
-	blockquote{
+	address{
+		font-style: normal;
 		margin-left: 46px;
 		margin-bottom: 18px;
 	}
@@ -570,53 +575,84 @@ header{
 }
 
 /* Home teaser */
-#teaser-title{
-	position: absolute;
-	left: 28px;
-	bottom: 25px;
-	text-decoration: none;
-	h2{
-		font-size: 24px;
-		line-height: 24px;
-		color: @mainred;
-		margin-bottom: 0;
-		font-family: 'futuratbook';
-		font-weight: normal;
-		text-transform: uppercase;
+body.home-teaser{
+	height: 100%;
+	overflow:hidden !important;
+	#videoCont{
+		position: fixed;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
 	}
-	p{
-		&.home-date{
+	#video{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #CCC;
+		z-index: 10;
+		overflow: hidden;
+		iframe{
+			position: absolute;
+		}
+	}
+	#videoElements{
+		position: fixed;
+		z-index: 11;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		#teaser-title{
+			position: absolute;
+			left: 28px;
+			bottom: 25px;
+			text-decoration: none;
+			position: absolute;
+			
+			h2{
+				font-size: 24px;
+				line-height: 24px;
+				color: @mainred;
+				margin-bottom: 0;
+				font-family: 'futuratbook';
+				font-weight: normal;
+				text-transform: uppercase;
+			}
+			p{
+				&.home-date{
+					font-family: 'futuratbook';
+					font-size: 15px;
+					line-height: 18px;
+					margin-top: 2px;
+					margin-bottom: 0;
+					color: #000;
+				}
+			}
+		}
+		h3.teaser-gallery{
+			margin: 0;
 			font-family: 'futuratbook';
+			position: absolute;
+			bottom: 26px;
+			right: 30px;
+			font-weight: normal;
 			font-size: 15px;
 			line-height: 18px;
-			margin-top: 2px;
-			margin-bottom: 0;
-			color: #000;
+			span{
+				font-size: 12px;
+			}
+			a{
+				text-decoration: none;
+				color: #000;
+			}
 		}
 	}
 }
-h3.teaser-gallery{
-	margin: 0;
-	font-family: 'futuratbook';
-	position: absolute;
-	bottom: 26px;
-	right: 30px;
-	font-weight: normal;
-	font-size: 15px;
-	line-height: 18px;
-	span{
-		font-size: 12px;
-	}
-	a{
-		text-decoration: none;
-		color: #000;
-	}
-}
 
-/* Home teaser */
-body.home-teaser{
-	background: #000;
-}
 
 /* Calendar page */
 body.calendar{

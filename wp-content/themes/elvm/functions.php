@@ -1,10 +1,4 @@
 <?php
-	
-
-
-
-
-	add_action( 'init', 'custom_post_types' );
 	function custom_post_types() {
 		$labels = array(
 			'name' => _x('Exhibitions', 'post type general name'),
@@ -36,7 +30,7 @@
 			'menu_icon' => '',
 			'supports' => array()
 		);
-		register_post_type('exhibitions',$args);
+		register_post_type('exhibits',$args);
 	
 		$labels = array(
 			'name' => _x('Calendar', 'post type general name'),
@@ -136,26 +130,37 @@
 		register_post_type('news',$args);
 		flush_rewrite_rules();
 	}
+
 	function register_my_menu() {
 		register_nav_menu('header-menu',__( 'Header Menu' ));
 	}
-	add_action( 'init', 'register_my_menu' );
-
-	function special_nav_class($classes, $item){
-		if( in_array('current-menu-item', $classes) || in_array('current-menu-ancestor', $classes) ){
-			$classes[] = 'active ';
-		}
-		return $classes;
-	}
-	add_action( 'admin_menu', 'register_my_custom_menu_page' );
+	
 	function register_my_custom_menu_page(){
-		add_menu_page( 'home-page', 'Home', 'manage_options', 'slug0', '0', '', 6 );
-		add_menu_page( 'about-page', 'About', 'manage_options', 'slug1', '1', '', 7 );
-		add_menu_page( 'visit-page', 'Visit', 'manage_options', 'slug2', '2', '', 8 );
-		add_menu_page( 'exhibitions-page', 'Exhibitions', 'manage_options', 'slug3', '3', '', 9 );
-		add_menu_page( 'calendar-page', 'Calendar', 'manage_options', 'slug4', '4', '', 10 );
-		add_menu_page( 'education-page', 'Education', 'manage_options', 'slug5', '5', '', 11 );
-		add_menu_page( 'press-page', 'Press', 'manage_options', 'slug6', '6', '', 12 );
-		add_menu_page( 'news-page', 'News', 'manage_options', 'slug7', '7', '', 13 );
+		$page = get_page_by_title( 'home' );
+		add_menu_page( 'home-page', 'Home', 'manage_options', '/post.php?post='.$page->ID.'&action=edit', '0', 'dashicons-admin-home', 6 );
+		$page = get_page_by_title( 'About' );
+		add_menu_page( 'about-page', 'About', 'manage_options', '/post.php?post='.$page->ID.'&action=edit', '0', 'dashicons-format-quote', 7 );
+		$page = get_page_by_title( 'visit' );
+		add_menu_page( 'visit-page', 'Visit', 'manage_options', '/post.php?post='.$page->ID.'&action=edit', '0', 'dashicons-location', 8 );
+		add_menu_page( 'exhibitions-page', 'Exhibitions', 'manage_options', '/edit.php?post_type=exhibits', '0', ' dashicons-images-alt', 9 );
+		add_menu_page( 'calendar-page', 'Calendar', 'manage_options', '/edit.php?post_type=calendar', '0', 'dashicons-calendar', 10 );
+		$page = get_page_by_title( 'education' );
+		add_menu_page( 'education-page', 'Education', 'manage_options', '/post.php?post='.$page->ID.'&action=edit', '0', 'dashicons-welcome-learn-more', 11 );
+		add_menu_page( 'press-page', 'Press', 'manage_options', '/edit.php?post_type=press', '0', 'dashicons-tagcloud', 12 );
+		add_menu_page( 'news-page', 'News', 'manage_options', '/edit.php?post_type=news', '0', 'dashicons-star-empty', 13 );
+	}
+
+	add_action( 'init', 'custom_post_types' );
+	add_action( 'init', 'register_my_menu' );
+	add_action( 'admin_menu', 'register_my_custom_menu_page' );
+
+
+	global $current_user;
+	get_currentuserinfo();
+	if ( $current_user->data->user_nicename !== 'admin' ) {
+		add_action('admin_head', 'admin_head');
+		function admin_head(){
+			echo '<link rel="stylesheet" href="'.get_bloginfo( 'template_directory' ).'/adminstyles.css" >';
+		};
 	}
 ?>

@@ -47,3 +47,20 @@ function isotopeload(){
 		}
 	});
 };
+
+
+$("#video").okvideo({
+	source: '9bZkp7q19f0',
+	volume: 0,
+	loop: true,
+	hd:true,
+	adproof: true,
+	annotations: false,
+	onFinished: function() { console.log('finished') },
+	unstarted: function() { console.log('unstarted') },
+	onReady: function() { alert('a') },
+	onPlay: function() { console.log('onplay') },
+	onPause: function() { console.log('pause') },
+	buffering: function() { console.log('buffering') },
+	cued: function() { console.log('cued') }
+});

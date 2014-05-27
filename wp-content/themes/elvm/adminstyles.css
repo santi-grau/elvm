@@ -1,0 +1,18 @@
+#adminmenu .wp-menu-separator,
+#menu-dashboard,
+#menu-posts,
+#menu-pages,
+#menu-comments,
+#menu-appearance,
+#menu-plugins,
+#menu-users,
+#menu-tools,
+#menu-settings,
+#menu-plugins,
+#toplevel_page_edit-post_type-acf,
+#menu-posts-exhibits,
+#menu-posts-calendar,
+#menu-posts-press,
+#menu-posts-news{
+	display: none;
+}
