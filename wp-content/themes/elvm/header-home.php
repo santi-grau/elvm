@@ -53,8 +53,8 @@
 				</ul>
 			</nav>
 			<ul id="languages">
-				<li><a href="javascript:void(0)" class="active">English</a> / </li>
-				<li><a href="javascript:void(0)">Deutsch</a></li>
+				<li><a href="/" class="<?php if (ICL_LANGUAGE_CODE == 'en'){ echo 'active'; } ?>">English</a> / </li>
+				<li><a href="/de" class="<?php if (ICL_LANGUAGE_CODE == 'de'){ echo 'active'; } ?>">Deutsch</a></li>
 			</ul>
 
 			<div id="widget-box">
