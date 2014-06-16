@@ -23,7 +23,7 @@
 			'show_ui' => true, 
 			'show_in_menu' => true, 
 			'query_var' => true,
-			'rewrite' => true,
+			'rewrite' => array('slug' => 'exhibition'),
 			'capability_type' => 'post',
 			'has_archive' => false, 
 			'hierarchical' => false,
@@ -162,5 +162,12 @@
 		function admin_head(){
 			echo '<link rel="stylesheet" href="'.get_bloginfo( 'template_directory' ).'/adminstyles.css" >';
 		};
+	}
+	add_filter( 'wp_title', 'baw_hack_wp_title_for_home' );
+	function baw_hack_wp_title_for_home( $title ){
+		if( empty( $title ) && ( is_home() || is_front_page() ) ) {
+			return __( 'Home', 'theme_domain' ) . ' | ' . get_bloginfo( 'description' );
+		}
+		return $title;
 	}
 ?>

@@ -6,7 +6,7 @@
 	<head>			
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<title><?php echo get_bloginfo('name') .' | ';wp_title(''); ?></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -17,7 +17,7 @@
 	</head>
 
 
-	<body>
+	<body <?php body_class(); ?>>
 		<header>
 			<nav>
 				<a href="/" id="logo"></a>

@@ -266,6 +266,10 @@ header #widget-box a {
 header #widget-box a:hover {
   color: #e00014;
 }
+body.single-calendar header nav ul li.menu-item-21 a {
+  border-bottom: 1px solid #000;
+  margin-bottom: -1px;
+}
 .wp-caption {
   width: 436px;
   margin: 0 auto;
@@ -776,6 +780,9 @@ footer a:hover {
 }
 .vjs-control-bar {
   display: none;
+}
+input:focus {
+  outline-width: 0 !important;
 }
 /* ==========================================================================
 	Helper classes
