@@ -347,19 +347,6 @@ body.single-calendar header nav ul li.menu-item-21 a {
   position: relative;
   display: block;
 }
-#main .c1 .play-img {
-  width: 29px;
-  height: 58px;
-  margin: -29px 0 0 -14.5px;
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background: url(img/sprites.png) 0px -21px;
-}
-#main .c1 .play-img:hover {
-  background: url(img/sprites.png) 0px -89px;
-}
 #main .c2 {
   width: 540px;
 }
@@ -527,6 +514,28 @@ body.single-calendar header nav ul li.menu-item-21 a {
   display: block;
   cursor: default;
 }
+#video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #CCC;
+  z-index: 10;
+  overflow: hidden;
+}
+#video iframe {
+  position: absolute;
+}
+#video a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 /* Home teaser */
 body.home-teaser {
   height: 100%;
@@ -540,19 +549,6 @@ body.home-teaser #videoCont {
   width: 100%;
   height: 100%;
   z-index: 100;
-}
-body.home-teaser #video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #CCC;
-  z-index: 10;
-  overflow: hidden;
-}
-body.home-teaser #video iframe {
-  position: absolute;
 }
 body.home-teaser #videoElements {
   position: fixed;
@@ -627,6 +623,28 @@ footer a {
 }
 footer a:hover {
   color: #e00014;
+}
+#feat_video {
+  display: block;
+  width: 711px;
+  position: relative;
+}
+#feat_video img {
+  width: 100%;
+  min-width: 100%;
+}
+#feat_video .play-img {
+  width: 29px;
+  height: 58px;
+  margin: -29px 0 0 -14.5px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: url(img/sprites.png) 0px -21px;
+}
+#feat_video:hover .play-img {
+  background: url(img/sprites.png) 0px -89px;
 }
 /* Fonts */
 @font-face {
