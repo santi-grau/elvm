@@ -16,7 +16,9 @@ function fittobox(){
 	});
 }
 function mainfadein(){
-	$('#main').fadeIn();
+	$('#main').fadeIn(function(){
+		$('footer').fadeIn()
+	});
 }
 function topbarclose(){
 	$('.top-bar-close').toggleClass('active');	

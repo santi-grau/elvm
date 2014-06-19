@@ -65,3 +65,4 @@
 			</div>
 		</header>
 		<div id="main">
+			<div id="main_inner">

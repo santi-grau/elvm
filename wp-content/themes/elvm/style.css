@@ -609,6 +609,26 @@ body.calendar #main .c2 article {
 body.calendar #main .c2 article p:last-child {
   margin-bottom: 0;
 }
+html,
+body {
+  height: 100%;
+}
+#main {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -50px;
+}
+#main #main_inner {
+  margin-top: 174px;
+}
+footer,
+.push {
+  height: 50px;
+}
+footer {
+  padding-top: 20px;
+}
 /* Footer */
 footer {
   font-size: 12px;
@@ -617,6 +637,10 @@ footer {
   margin-bottom: 26px;
   margin-top: 84px;
   font-family: 'futuratbook';
+  width: 518px;
+  position: relative;
+  margin: 0 auto;
+  display: none;
 }
 footer a {
   color: #000;

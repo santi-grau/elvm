@@ -671,6 +671,26 @@ body.calendar{
 	}
 }
 
+@footerheight: 50px;
+html, body {
+	height: 100%;
+}
+#main {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -@footerheight;
+	#main_inner{
+		margin-top: 174px;
+	}
+}
+footer, .push {
+	height: @footerheight;
+}
+footer{
+	padding-top: 20px;
+}
+
 
 /* Footer */
 footer{
@@ -680,12 +700,16 @@ footer{
 	margin-bottom: 26px;
 	margin-top: 84px;
 	font-family: 'futuratbook';
+	width: 518px;
+	position: relative;
+	margin: 0 auto;
 	a{
 		color: #000;
 		&:hover{
 			color: @mainred;
 		}
 	}
+	display:none;
 }
 
 
