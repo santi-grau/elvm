@@ -13,6 +13,9 @@
 #menu-posts-exhibits,
 #menu-posts-calendar,
 #menu-posts-press,
+#wp-admin-bar-new-content,
+#wp-admin-bar-comments,
+#wp-admin-bar-updates,
 #menu-posts-news{
 	display: none;
 }
