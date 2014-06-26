@@ -574,6 +574,7 @@ body.home #videoElements #teaser-title h2 {
   font-family: 'futuratbook';
   font-weight: normal;
   text-transform: uppercase;
+  width: 400px;
 }
 body.home #videoElements #teaser-title p.home-date {
   font-family: 'futuratbook';
