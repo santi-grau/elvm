@@ -18,12 +18,14 @@
 ?>
 	<!-- Press article -->
 	<li>
-		<a href="<?php the_field('press_attachment'); ?>" target="_blank">
-			<?php the_content(); ?>
-		</a>
 		<?php if(get_field('press_attachment')) { ?>
-			<a href="<?php the_field('press_attachment'); ?>" target="blank" class="pdf-icon"></a>
-		<?php }; ?>
+			<a href="<?php the_field('press_attachment'); ?>" target="_blank">
+		<?php }else{ ?>
+			<a href="http://<?php the_field('press_url'); ?>" target="_blank">
+		<?php } ?>
+			<?php the_content(); ?><?php if(get_field('press_attachment')) { ?><span class="pdf-icon"></span><?php } ?>
+		</a>
+		
 	</li>
 	<!-- / End Press article -->
 <?php

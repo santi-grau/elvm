@@ -464,7 +464,7 @@ body.single-calendar header nav ul li.menu-item-21 a {
   margin: 8px 0;
   line-height: 33px;
 }
-#main ul.download-list li a.pdf-icon {
+#main ul.download-list li a .pdf-icon {
   background: url(img/pdf-icon.png);
   margin-top: 0;
   width: 12px;
@@ -475,7 +475,7 @@ body.single-calendar header nav ul li.menu-item-21 a {
 #main ul.download-list li a:hover {
   color: #e00014;
 }
-#main ul.download-list li a:hover.pdf-icon {
+#main ul.download-list li a:hover .pdf-icon {
   background: url(img/pdf-icon-hover.png);
 }
 .lightbox {
