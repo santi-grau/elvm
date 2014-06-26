@@ -146,8 +146,10 @@
 		add_menu_page( 'calendar-page', 'Calendar', 'manage_options', '/edit.php?post_type=calendar', '0', 'dashicons-calendar', 10 );
 		$page = get_page_by_title( 'education' );
 		add_menu_page( 'education-page', 'Education', 'manage_options', '/post.php?post='.$page->ID.'&action=edit', '0', 'dashicons-welcome-learn-more', 11 );
-		add_menu_page( 'press-page', 'Press', 'manage_options', '/edit.php?post_type=press', '0', 'dashicons-tagcloud', 12 );
-		add_menu_page( 'news-page', 'News', 'manage_options', '/edit.php?post_type=news', '0', 'dashicons-star-empty', 13 );
+		$page = get_page_by_title( 'press' );
+		add_menu_page( 'press-page', 'Press (page)', 'manage_options', '/post.php?post='.$page->ID.'&action=edit', '0', 'dashicons-welcome-widgets-menus', 12 );
+		add_menu_page( 'press-article', 'Press (articles)', 'manage_options', '/edit.php?post_type=press', '0', 'dashicons-tagcloud', 13 );
+		add_menu_page( 'news-page', 'News', 'manage_options', '/edit.php?post_type=news', '0', 'dashicons-star-empty', 14 );
 	}
 
 	add_action( 'init', 'custom_post_types' );
