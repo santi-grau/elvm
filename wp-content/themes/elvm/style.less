@@ -562,6 +562,36 @@ body.single-calendar header nav ul li.menu-item-21 a{
 		cursor: default;
 	}
 }
+body.page-child{
+	#video{
+		width: 90%;
+		height: 90%;
+		top: 5%;
+		left: 5%;
+		position: relative;
+	}
+	#videocont{
+		a{
+			width: 18px;
+			height: 18px;
+			display: block;
+			background: url(img/sprites.png) 0px -157px;
+			position: fixed;
+			top: 30px;
+			right: 30px;
+			z-index: 30;
+		}
+	}
+}
+#videocont{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	z-index: 10;
+}
 #video{
 	position: fixed;
 	top: 0;
@@ -569,7 +599,6 @@ body.single-calendar header nav ul li.menu-item-21 a{
 	width: 100%;
 	height: 100%;
 	background-color: #CCC;
-	z-index: 10;
 	overflow: hidden;
 	iframe{
 		position: absolute;
@@ -582,6 +611,14 @@ body.single-calendar header nav ul li.menu-item-21 a{
 		width: 100%;
 		height: 100%;
 		z-index: 1;
+	}
+	#blinder{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
 	}
 }
 /* Home teaser */
@@ -599,6 +636,7 @@ body.home{
 		width: 100%;
 		height: 100%;
 		z-index: 100;
+		display: block;
 	}
 	
 	#videoElements{

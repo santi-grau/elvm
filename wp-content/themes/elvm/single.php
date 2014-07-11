@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<?php if(get_field('featured_video')){ ?>
-		<a href="javascript:void(0)" id="feat_video" data-url="<?php the_field('featured_video'); ?>" onload="alert('a');" ><span class="play-img"></span></a>
+		<a href="javascript:void(0)" id="feat_video" data-url="<?php the_field('featured_video'); ?>" ><span class="play-img"></span></a>
 	<?php } ?>
 	<h1><?php the_title(); ?></h1>
 	<?php 

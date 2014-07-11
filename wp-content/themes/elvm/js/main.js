@@ -73,16 +73,18 @@ FeatVideo.prototype._setPoster = function(img){
 
 var FullscreenVideo = function(url){
 	var self = this;
-	this.video = $('<div id="video" />').appendTo('body');
+	this.videocont = $('<div id="videocont" />').appendTo('body');
+	this.video = $('<div id="video" />').appendTo(videocont);
 	this.iframe = $('<iframe frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen />').appendTo(this.video);
-	this.closeBut = $('<a href="javascript:void(0)" />').appendTo(this.video);
+	this.closeBut = $('<a href="javascript:void(0)" />').appendTo(this.videocont);
+	this.blinder = $('<div id="blinder" />').appendTo(this.video);
 	var vi = new RegExp(/vimeo.com\/\d+$/i);
 	var yt = new RegExp(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i);
 	if(vi.test(url)){
 		var id = url.match(/\d+$/i)[0];
 		$.getJSON( 'http://vimeo.com/api/v2/video/' + id + '.json', $.proxy(function( data ) {
 			this.iframe.attr({
-				src : '//player.vimeo.com/video/'+id+'?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1;',
+				src : '//player.vimeo.com/video/'+id+'?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1;',
 				width : data[0].width,
 				height : data[0].height,
 				w : data[0].width,
@@ -100,7 +102,7 @@ var FullscreenVideo = function(url){
 			dataType: "jsonp",
 			success: function(data){
 				self.iframe.attr({
-					src : '//www.youtube.com/embed/'+id+'?autoplay=1',
+					src : '//www.youtube.com/embed/'+id+'?autoplay=1&loop=1',
 					width : data.query.results.json.width,
 					height : data.query.results.json.height,
 					w : data.query.results.json.width,
@@ -136,7 +138,7 @@ FullscreenVideo.prototype._resize = function(){
 	});
 }
 FullscreenVideo.prototype._close = function(){
-	this.video.fadeOut(function(){
+	this.videocont.fadeOut(function(){
 		$(this.remove())
 	})
 }
