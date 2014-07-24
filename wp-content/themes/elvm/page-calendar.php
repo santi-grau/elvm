@@ -18,7 +18,7 @@
 				<?php
 					$date1 = NULL;
 					$date2 = NULL;
-					if(get_field('date_from') && get_field('date_to')){ 
+					if(get_field('date_from') || get_field('date_to')){ 
 						if(get_field('date_from')) { $date1 = DateTime::createFromFormat('Ymd',get_field('date_from')); }
 						if(get_field('date_to')) { $date2 = DateTime::createFromFormat('Ymd',get_field('date_to')); } 
 						if(isset($date1) && isset($date2)){
