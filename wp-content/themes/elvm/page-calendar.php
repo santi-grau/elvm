@@ -13,8 +13,8 @@
 	<!-- News article -->
 	<article class="calendar-article" style="position: absolute; left: 276px; top: 0px;">
 		<div class="article-header">
-			<div class="article-header-info">
-				<?php if(get_field('date_from') || get_field('date_to')){  ?>
+			<?php if(get_field('date_from') || get_field('date_to')){  ?>
+				<div class="article-header-info">
 					<p class="article-date">
 					<?php
 						$date1 = NULL;
@@ -43,8 +43,8 @@
 						}
 					?>
 					</p>
-				<?php }  ?>
-			</div>
+				</div>
+			<?php }  ?>
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		</div>
 		<?php
