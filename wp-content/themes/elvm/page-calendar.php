@@ -14,11 +14,11 @@
 	<article class="calendar-article" style="position: absolute; left: 276px; top: 0px;">
 		<div class="article-header">
 			<div class="article-header-info">
-				<p class="article-date">
-				<?php
-					$date1 = NULL;
-					$date2 = NULL;
-					if(get_field('date_from') || get_field('date_to')){ 
+				<?php if(get_field('date_from') || get_field('date_to')){  ?>
+					<p class="article-date">
+					<?php
+						$date1 = NULL;
+						$date2 = NULL;
 						if(get_field('date_from')) { $date1 = DateTime::createFromFormat('Ymd',get_field('date_from')); }
 						if(get_field('date_to')) { $date2 = DateTime::createFromFormat('Ymd',get_field('date_to')); } 
 						if(isset($date1) && isset($date2)){
@@ -41,10 +41,9 @@
 							echo '<br />';
 							echo $time1;
 						}
-					}
-				?>
-				</p>
-
+					?>
+					</p>
+				<?php }  ?>
 			</div>
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		</div>
