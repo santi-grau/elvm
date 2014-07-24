@@ -131,7 +131,7 @@ html, body {
 h2{
 	font-family: 'futuratbook';
 	font-weight: normal;
-	text-transform:uppercase;
+	// text-transform:uppercase;
 	&.page-title{		
 		border-bottom: 1px solid #000;
 		font-size: 33px;
@@ -302,9 +302,9 @@ body.single-calendar header nav ul li.menu-item-21 a{
 }
 
 
-.wp-caption{
+.wp-caption, img{
 	width: 436px;
-	margin: 0 auto;
+	margin: 10px auto 0;
 	display: block;
 	margin-bottom: 10px;
 	.wp-caption-text{
@@ -319,7 +319,7 @@ body.single-calendar header nav ul li.menu-item-21 a{
 }
 /* CONTENT */
 #main{
-	width: 518px;
+	width: 528px;
 	position: relative;
 	margin: 0 auto;
 	margin-top: 174px;
@@ -340,10 +340,12 @@ body.single-calendar header nav ul li.menu-item-21 a{
 		font-size: 15px;
 		line-height: 18px;
 		a{
-			text-decoration: underline;
+			text-decoration: none;
+			border-bottom: solid 1px #000;
 			color: #000;
 			&:hover{
 				color: @mainred;
+				border-bottom: solid 1px @mainred;
 			}
 		}
 		&.wp-caption-text{
@@ -465,10 +467,12 @@ body.single-calendar header nav ul li.menu-item-21 a{
 			font-size: 15px;
 			line-height: 18px;
 			a{
-				text-decoration: underline;
+				text-decoration: none;
 				color: #000;
+				border-bottom: solid 1px #000;
 				&:hover{
 					color: @mainred;
+					border-bottom: solid 1px @mainred;
 				}
 			}
 			img{
@@ -562,12 +566,12 @@ body.single-calendar header nav ul li.menu-item-21 a{
 		cursor: default;
 	}
 }
-body.page-child{
+body.page-child, body.single{
 	#video{
-		width: 90%;
-		height: 90%;
-		top: 5%;
-		left: 5%;
+		width: ~"calc(100% - 60px)";
+		height: ~"calc(100% - 120px)";
+		top: 60px;
+		left: 30px;
 		position: relative;
 	}
 	#videocont{
@@ -659,7 +663,7 @@ body.home{
 				margin-bottom: 0;
 				font-family: 'futuratbook';
 				font-weight: normal;
-				text-transform: uppercase;
+				// text-transform: uppercase;
 				width: 400px;
 			}
 			p{
@@ -724,6 +728,15 @@ html, body {
 	margin: 0 auto -@footerheight;
 	#main_inner{
 		margin-top: 174px;
+		h3{
+			margin: 0;
+			padding: 0;
+			font-size: 15px;
+			line-height: 18px;
+			text-transform: uppercase;
+			// space after: 18px;
+			font-family: 'futuratbook';
+		}
 	}
 }
 footer, .push {
@@ -742,12 +755,15 @@ footer{
 	margin-bottom: 26px;
 	margin-top: 84px;
 	font-family: 'futuratbook';
-	width: 518px;
+	width: 528px;
 	position: relative;
 	margin: 0 auto;
 	a{
+		text-decoration: none;
+		border-bottom: 1px solid #000;
 		color: #000;
 		&:hover{
+			border-bottom: 1px solid @mainred;
 			color: @mainred;
 		}
 	}

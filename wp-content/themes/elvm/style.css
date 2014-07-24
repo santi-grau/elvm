@@ -108,7 +108,6 @@ body.lightbox-active {
 h2 {
   font-family: 'futuratbook';
   font-weight: normal;
-  text-transform: uppercase;
 }
 h2.page-title {
   border-bottom: 1px solid #000;
@@ -270,13 +269,15 @@ body.single-calendar header nav ul li.menu-item-21 a {
   border-bottom: 1px solid #000;
   margin-bottom: -1px;
 }
-.wp-caption {
+.wp-caption,
+img {
   width: 436px;
-  margin: 0 auto;
+  margin: 10px auto 0;
   display: block;
   margin-bottom: 10px;
 }
-.wp-caption .wp-caption-text {
+.wp-caption .wp-caption-text,
+img .wp-caption-text {
   width: 436px;
   display: block;
   margin: 0 auto;
@@ -287,7 +288,7 @@ body.single-calendar header nav ul li.menu-item-21 a {
 }
 /* CONTENT */
 #main {
-  width: 518px;
+  width: 528px;
   position: relative;
   margin: 0 auto;
   margin-top: 174px;
@@ -310,11 +311,13 @@ body.single-calendar header nav ul li.menu-item-21 a {
   line-height: 18px;
 }
 #main p a {
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: solid 1px #000;
   color: #000;
 }
 #main p a:hover {
   color: #e00014;
+  border-bottom: solid 1px #e00014;
 }
 #main p.wp-caption-text {
   width: 436px;
@@ -427,11 +430,13 @@ body.single-calendar header nav ul li.menu-item-21 a {
   line-height: 18px;
 }
 #main article p a {
-  text-decoration: underline;
+  text-decoration: none;
   color: #000;
+  border-bottom: solid 1px #000;
 }
 #main article p a:hover {
   color: #e00014;
+  border-bottom: solid 1px #e00014;
 }
 #main article p img {
   width: 436px;
@@ -514,14 +519,16 @@ body.single-calendar header nav ul li.menu-item-21 a {
   display: block;
   cursor: default;
 }
-body.page-child #video {
-  width: 90%;
-  height: 90%;
-  top: 5%;
-  left: 5%;
+body.page-child #video,
+body.single #video {
+  width: calc(100% - 60px);
+  height: calc(100% - 120px);
+  top: 60px;
+  left: 30px;
   position: relative;
 }
-body.page-child #videocont a {
+body.page-child #videocont a,
+body.single #videocont a {
   width: 18px;
   height: 18px;
   display: block;
@@ -607,7 +614,6 @@ body.home #videoElements #teaser-title h2 {
   margin-bottom: 0;
   font-family: 'futuratbook';
   font-weight: normal;
-  text-transform: uppercase;
   width: 400px;
 }
 body.home #videoElements #teaser-title p.home-date {
@@ -660,6 +666,14 @@ body {
 #main #main_inner {
   margin-top: 174px;
 }
+#main #main_inner h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-family: 'futuratbook';
+}
 footer,
 .push {
   height: 50px;
@@ -675,15 +689,18 @@ footer {
   margin-bottom: 26px;
   margin-top: 84px;
   font-family: 'futuratbook';
-  width: 518px;
+  width: 528px;
   position: relative;
   margin: 0 auto;
   display: none;
 }
 footer a {
+  text-decoration: none;
+  border-bottom: 1px solid #000;
   color: #000;
 }
 footer a:hover {
+  border-bottom: 1px solid #e00014;
   color: #e00014;
 }
 #feat_video {
