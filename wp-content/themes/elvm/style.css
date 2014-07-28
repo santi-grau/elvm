@@ -686,7 +686,10 @@ body {
   margin: 0 auto -50px;
 }
 #main #main_inner {
-  margin-top: 174px;
+  padding-top: 174px;
+}
+#main #main_inner h1 {
+  margin-top: 0;
 }
 #main #main_inner h3 {
   margin: 0;
