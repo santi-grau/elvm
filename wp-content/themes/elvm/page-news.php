@@ -11,7 +11,7 @@
 	while ( $projects->have_posts() ) : $projects->the_post();
 ?>
 	<!-- News article -->
-	<article class="calendar-article" style="position: absolute; left: 276px; top: 0px;">
+	<article class="calendar-article">
 		<div class="article-header">
 			<div class="article-header-info">
 				<p class="article-date"><?php the_date(); ?></p>
@@ -19,9 +19,7 @@
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		</div>
 		<?php
-			global $more;
-			$more = 0;
-			the_content( '', '' );
+			the_field('post_excerpt');
 		?>
 	</article>
 	<!-- / End News article -->
