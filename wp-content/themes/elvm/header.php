@@ -34,9 +34,7 @@
 			</ul>
 
 			<div id="widget-box">
-				<a href="search.html">
-					<input type="text" placeholder="Search">
-				</a>
+				<?php get_search_form(); ?>
 				<a href="javascript:void(0)">Newsletter sign-up</a>
 			</div>
 		</header>

@@ -265,6 +265,9 @@ header #widget-box a {
 header #widget-box a:hover {
   color: #e00014;
 }
+header #widget-box #searchsubmit {
+  display: none;
+}
 body.single-calendar header nav ul li.menu-item-21 a {
   border-bottom: 1px solid #000;
   margin-bottom: -1px;
